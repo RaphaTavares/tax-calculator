@@ -32,3 +32,5 @@ const blueNetSalary = chalk.blue.bold("R$" + netSalary.toFixed(2));
 const irrfString = chalk.red.bold("IRRF");
 
 console.log(`${greenDependentsDeductedSalary} - ${irrfString} = ${blueNetSalary}`);
+
+const end = prompt('Press enter key to end the program.');

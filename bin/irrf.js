@@ -39,6 +39,7 @@ const ranges = {
         start: 4664.69,
         aliquot: 27.5,
         totalDiscount: salary =>{
+            console.log("desconto da ultima aliquota:" + (salary - ranges.fifth.start) * (ranges.fifth.aliquot / 100));
             return (salary - ranges.fifth.start) * (ranges.fifth.aliquot / 100);
         }
     }
@@ -59,10 +60,10 @@ const irrf = (salary) =>{
         thirdDiscount = ranges.third.totalDiscount();
         secondDiscount = ranges.second.totalDiscount();
         firstDiscount = ranges.first.totalDiscount();
-        fourthDiscount = (salary - ranges.fourth.end) * (ranges.fourth.aliquot / 100);
     }
 
     else if (salary > ranges.fourth.start){
+        let amountToBeDiscounted = salary - ranges.fourth.start;
         fourthDiscount = amountToBeDiscounted * (ranges.fourth.aliquot / 100);
         thirdDiscount = ranges.third.totalDiscount();
         secondDiscount = ranges.second.totalDiscount();
